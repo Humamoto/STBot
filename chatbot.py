@@ -26,7 +26,7 @@ class ChatBot:
 
         messages = [{"role": "system", "content": system_message}] + messages
 
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=messages
         )
