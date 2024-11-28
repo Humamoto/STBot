@@ -1,11 +1,11 @@
 import os
 from dotenv import load_dotenv
-from openai import OpenAI
 
 load_dotenv()
-OpenAI.api_key = os.getenv("OPENAI_API_KEY")
 
-client = OpenAI()
+from openai import OpenAI
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 class ChatBot:
     def __init__(self, feedback_processor, knowledge_base):
